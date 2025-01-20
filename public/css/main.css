@@ -27,16 +27,15 @@ section, summary, time, mark, audio, video {
 
 	/* Navbar Styles */
 .navbar {
-	border-radius: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     color: black;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	font-family: 'Poppins', sans-serif;
 }
 
 .nav-links {
+	text-align: center;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -130,14 +129,29 @@ input, select, textarea {
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
+	.button-container {
+		display: flex;
+		gap: 20px;
+	}
+	.index-container {
+		display: flex;
+		flex-direction: column;
+		font-style: italic;
+		gap: 20px;
+	}
+	.index-container form {
+		margin: 0;
+	}
+	.button-container form {
+		margin: 0;
+	}
 
-	body {
-		/* background: #ffffff; */
-		background-image: url("/img/images/banner.jpg");
-		background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
-		background-position: center;  /*Centra la imagen */
-		
-		height: 100vh; /* Hace que el fondo cubra toda la ventana */
+	.wrapper {
+		flex: 1;
+	}
+
+	footer {
+		text-align: center;
 	}
 
 	create-form{
@@ -199,7 +213,7 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: 'Poppins', sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
 		line-height: 1.65;

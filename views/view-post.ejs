@@ -8,17 +8,19 @@
                 <p><%= post.author %></p>
                 <p><%= post.date %></p>
                 <p><%= post.content %></p>
-                <form action="/edit" method="get">
-                    <input type="submit" value="Edit">
-                </form>
-                
-                <form action="/delete" method="post">
-                    <input type="submit" value="Delete">
-                </form>
-                
+                <div class="button-container">
+                    <form action="/edit/<%= post.id %>" method="get">
+                        <input type="submit" value="Edit">
+                    </form>
+                    <form action="/delete/<%= post.id %>" method="post">
+                        <input type="submit" value="Delete">
+                    </form>
+                </div>
             </li>
         <% }) %>
     </ul>
 <% } else { %>
     <p>No posts to display yet</p>
 <% } %>
+
+<%- include('partials/footer.ejs') %>

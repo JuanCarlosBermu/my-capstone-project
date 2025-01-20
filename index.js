@@ -37,19 +37,33 @@ app.post("/submit" , (req, res) => {
     res.render("view-post.ejs", { posts });
 });
 
-app.post('/delete', (req, res) => {
-  // const postId = parseInt(req.params.id, 10);
-  // posts = posts.filter(post => post.id !== postId); // Elimina el blog por ID
-  res.redirect('/');
+app.get('/edit/:id', (req, res) => {
+    const postId = parseInt(req.params.id, 10);
+    const post = posts.find(post => post.id === postId);
+    if (post) {
+      res.render('edit.ejs', { post });
+  } else {
+      res.redirect('/views/view-post.ejs');
+  }
+  });
+
+  app.post('/update/:id', (req, res) => {
+    const postId = parseInt(req.params.id, 10);
+    const postIndex = posts.findIndex(post => post.id === postId);
+    if (postIndex !== -1) {
+        posts[postIndex].title = req.body.title;
+        posts[postIndex].author = req.body.author;
+        posts[postIndex].date = req.body.date;
+        posts[postIndex].content = req.body.content;
+    }
+    res.redirect('/views/view-post.ejs');
 });
 
-// app.get("/delete/:index", (req, res) => {
-//     const index = req.params.index;
-//     posts.splice(index, 1);
-//     res.render("view-post.ejs", { posts });
-//   } 
-// );
-
+app.post('/delete/:id', (req, res) => {
+  const postId = parseInt(req.params.id, 10);
+  posts = posts.filter(post => post.id !== postId); 
+  res.redirect('/views/view-post.ejs');
+});
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
