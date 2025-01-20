@@ -1,1 +1,16 @@
 main.css
+
+# Dependencias
+node_modules/
+
+# Archivos de compilación
+dist/
+build/
+
+# Archivos de configuración local
+.env
+*.local
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
