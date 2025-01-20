@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+
+<h1>Hello welcome to my capstone project</h1>
+<h3>Here you can create your own blogs and view them all in one place </h3>
+
+<form action="/views/create-edit" method="get">
+    <input type="submit" value="Create a new blog">
+</form>
+
+<form action="/views/view-post.ejs" method="get">
+    <input type="submit" value="View your blogs">
+</form>
