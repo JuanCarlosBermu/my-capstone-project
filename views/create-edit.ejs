@@ -1,11 +1,15 @@
 <%- include('partials/header.ejs') %>
 <h1>Create a new blog</h1>
-<form action="/submit" method="post" id="create-form">                  
-    <input type="text" id="title" name="title" placeholder="Title" required>
-    <input type="text" id="author" name="author" placeholder="Author" required>
-    <input type="date" id="date" name="date" placeholder="Date" required>
-    <textarea id="content" name="content" placeholder="Content" required></textarea>
-    <div></div> <!-- gap between buttons -->
-    <input type="submit" value="Save">
-</form>
+<div class="container-create">
+    <div class="form-section-create">
+        <form action="/submit" method="post" id="create-form">                  
+            <input type="text" id="title" name="title" placeholder="Title" required>
+            <input type="text" id="author" name="author" placeholder="Author" required>
+            <input type="date" id="date" name="date" placeholder="Date" required>
+            <textarea id="content" name="content" placeholder="Content" required></textarea>
+            <div></div> <!-- gap between buttons -->
+            <input type="submit" value="Save">
+        </form>
+    </div>
+</div>
 <%- include('partials/footer.ejs') %>
